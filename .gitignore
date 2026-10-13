@@ -1,0 +1,20 @@
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Java build output
+*.class
+build/
+target/
+
+# Locally downloaded SDK archives
+requirements/
+*.rar
+
+# Runtime CSV data created by the application
+source-code/src/dataLayer/*.csv
+
+# OS files
+.DS_Store
+Thumbs.db
