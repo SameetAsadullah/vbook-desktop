@@ -1,87 +1,86 @@
-<h1 align="center">Hotel Reservation System</h1>
+# VBook Hotel Reservation System
 
-### Description
-A `Hotel Reservation System` named as `VBook`, coded in `Java and JavaFX`. Using csv files for storing the data. Administrator, Receptionist, Vendor, and Customer are the `Four Users` of this project and are described below:
+VBook is a desktop hotel reservation application built with Java and JavaFX. It models the workflows of a multi-role booking system while keeping the original academic project architecture and CSV-based persistence intact.
 
-#### Customer
-- Can login
-- Can SignUp
-- Can Search Hotels
-- Can Reserve Rooms
+![Java](https://img.shields.io/badge/Java-15%2B-ED8B00?logo=openjdk&logoColor=white)
+![JavaFX](https://img.shields.io/badge/UI-JavaFX-007396)
+![License](https://img.shields.io/badge/license-MIT-blue)
 
-#### Vendor
-- Can login
-- Can SignUp
-- Can Advertise Hotels
-- Can view history
+## Features
 
-#### Receptionist
-- Can login
-- Can register Customers
-- Can reserve bookings for customers
-- Can register vendors
-- Can advertise hotels of vendors
+| Role | Capabilities |
+| --- | --- |
+| Customer | Create an account, sign in, search hotels, and reserve rooms |
+| Vendor | Create an account, advertise hotels, and review activity |
+| Receptionist | Register customers and vendors, advertise hotels, and reserve rooms for customers |
+| Administrator | View, edit, and delete customer, vendor, receptionist, and hotel records |
 
-#### Admin
-- Can edit/view/delete customer's data
-- Can edit/view/delete vendor's data
-- Can edit/view/delete receptionist's data
-- Can edit/view/delete advertised hotels data
+## Architecture
 
-### Manual
-1) [Download](https://download.oracle.com/otn/java/jdk/15.0.2%2B7/0d1cfde4252546c6931946de8db48ee2/jdk-15.0.2_windows-x64_bin.exe) and install `jdk-15` from the given link (`C:\Program Files\Java\jdk-15` folder should be there after installation)
-    ```
-    https://download.oracle.com/otn/java/jdk/15.0.2%2B7/0d1cfde4252546c6931946de8db48ee2/jdk-15.0.2_windows-x64_bin.exe
-    ```
-    
-2) [Download](https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/requirements/) the javafx file from the given link and Extract it into C:\Program Files\Java
-    ```
-    https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/requirements/
-    ```
+The application follows a simple three-layer design:
 
-3) Open the provided project in intelliJ
-4) Go to run -> edit configurations -> Select your main that you are running -> Modify Option -> Tick the Add VM option
-5) Paste the given code in the VM Box
-    ```
-    --module-path
-    "C:\Program Files\Java\javafx-sdk-15.0.1\lib"
-    --add-modules=javafx.controls,javafx.fxml
-    ```
+- **Presentation layer** — JavaFX controllers, FXML views, styles, and image assets.
+- **Logic layer** — domain models and reservation workflows for users, hotels, rooms, and bookings.
+- **Data layer** — CSV readers and writers used by the application at runtime.
 
-6) Right click on your project -> open module settings -> global libararies -> remove lib if already added -> add lib folder located in `C:\Program Files\Java\javafx-sdk-15.0.1`
-7) Run the project and it will be in running state.
+See [Architecture](docs/ARCHITECTURE.md) for a more detailed map of the codebase.
 
-### Working Screenshots
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/homepage-ss.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/login-ss.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/signup-ss.png" alt = "" width="400px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/reserve-ss.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/reservation-ss.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/register-ss.png" alt = "" width="700px"/>
-</div>
-<br/>
-<div align="center">
-  <img src = "https://github.com/SameetAsadullah/Hotel-Reservation-System/blob/main/extras/manage-ss.png" alt = "" width="700px"/>
-</div>
+```text
+source-code/src/
+├── dataLayer/           CSV persistence
+├── logicLayer/          Domain and application logic
+└── presentationLayer/   JavaFX controllers, FXML, CSS, and assets
+```
 
-### Contributors
-- [Sameet Asadullah](https://github.com/SameetAsadullah) 
+## Run locally
+
+### Prerequisites
+
+- JDK 15 or newer
+- A matching [JavaFX SDK](https://openjfx.io/openjfx-docs/)
+- An IDE with JavaFX support, such as IntelliJ IDEA
+
+### IntelliJ IDEA setup
+
+1. Open the `source-code` directory as a project.
+2. Add the JavaFX SDK `lib` directory under **Project Structure → Libraries**.
+3. Create a run configuration for `presentationLayer.Main`.
+4. Set the working directory to the repository's `source-code` directory. The original persistence layer uses paths relative to that directory.
+5. Add these VM options, replacing the placeholder with your JavaFX SDK path:
+
+   ```text
+   --module-path /path/to/javafx-sdk/lib --add-modules javafx.controls,javafx.fxml
+   ```
+
+6. Run `presentationLayer.Main`.
+
+CSV files are created in `source-code/src/dataLayer` as the application is used. They are intentionally ignored because they may contain local account and booking data.
+
+## Screenshots
+
+| Home | Sign in |
+| --- | --- |
+| ![VBook home screen](extras/homepage-ss.png) | ![VBook sign-in screen](extras/login-ss.png) |
+
+| Sign up | Reserve a room |
+| --- | --- |
+| ![VBook sign-up screen](extras/signup-ss.png) | ![Room reservation screen](extras/reserve-ss.png) |
+
+| Reservation details | Administration |
+| --- | --- |
+| ![Reservation details](extras/reservation-ss.png) | ![Administration screen](extras/manage-ss.png) |
+
+## Project status
+
+This repository preserves an academic team project and its original learning-focused implementation. CSV storage and plaintext credentials make it suitable for demonstration and study, not production use. A production version would use a database, password hashing, validation, automated tests, and a packaged build.
+
+## Contributors
+
+- [Sameet Asadullah](https://github.com/SameetAsadullah)
 - [Tayyab Ali](https://github.com/DarkDragz)
 - [Aysha Noor](https://github.com/ayshanoorr)
 - [Syed Hamza Tahir](https://github.com/S-Y-3-D)
+
+## License
+
+Licensed under the [MIT License](LICENSE).
