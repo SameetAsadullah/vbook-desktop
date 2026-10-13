@@ -33,4 +33,4 @@ The JavaFX controllers call these classes to perform role-specific operations.
 JavaFX view → controller → logic-layer model → CSV reader/writer
 ```
 
-This compact architecture was appropriate for demonstrating object-oriented design and multi-role workflows in an academic desktop application. It also leaves clear extension points for database-backed persistence and a dedicated service layer.
+This compact architecture implements object-oriented domain modeling and multi-role desktop workflows. It also leaves clear extension points for database-backed persistence and a dedicated service layer.
