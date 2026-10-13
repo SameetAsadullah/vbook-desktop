@@ -17,7 +17,7 @@ VBook is a desktop hotel reservation application built with Java and JavaFX. It 
 
 ## Architecture
 
-The application follows a simple three-layer design:
+The application follows a three-layer architecture:
 
 - **Presentation layer** — JavaFX controllers, FXML views, styles, and image assets.
 - **Logic layer** — domain models and reservation workflows for users, hotels, rooms, and bookings.
