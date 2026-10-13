@@ -104,7 +104,7 @@ public class Admin {
                 i=Custms.size();
             }
         }
-        ReadAndWrite.truncAFile("./src/dataLayer/customers.csv");
+        ReadAndWrite.truncAFile("./data/customers.csv");
         ReadAndWrite.writeHeadersInFile(0);//0 For Customer
         for(int i=0;i<Custms.size();++i){
             ReadAndWrite.writeCustomerIntoFile(Custms.get(i));
@@ -124,7 +124,7 @@ public class Admin {
             }
         }
         Custms.remove(t);//Removing Customer From Vector
-        ReadAndWrite.truncAFile("./src/dataLayer/customers.csv");
+        ReadAndWrite.truncAFile("./data/customers.csv");
         ReadAndWrite.writeHeadersInFile(0);//0 For Customer
         for(int i=0;i<Custms.size();++i){
             ReadAndWrite.writeCustomerIntoFile(Custms.get(i));
@@ -159,7 +159,7 @@ public class Admin {
                 i=Vends.size();
             }
         }
-        ReadAndWrite.truncAFile("./src/dataLayer/vendors.csv");
+        ReadAndWrite.truncAFile("./data/vendors.csv");
         ReadAndWrite.writeHeadersInFile(1);//1 For Vendor
         for(int i=0;i<Vends.size();++i){
             ReadAndWrite.writeVendorIntoFile(Vends.get(i));
@@ -179,7 +179,7 @@ public class Admin {
             }
         }
         Vends.remove(t);//Removing Customer From Vector
-        ReadAndWrite.truncAFile("./src/dataLayer/vendors.csv");
+        ReadAndWrite.truncAFile("./data/vendors.csv");
         ReadAndWrite.writeHeadersInFile(1);//1 For Vendor
         for(int i=0;i<Vends.size();++i){
             ReadAndWrite.writeVendorIntoFile(Vends.get(i));
@@ -218,7 +218,7 @@ public class Admin {
                 i=Hots.size();
             }
         }
-        ReadAndWrite.truncAFile("./src/dataLayer/hotels.csv");
+        ReadAndWrite.truncAFile("./data/hotels.csv");
         ReadAndWrite.writeHeadersInFile(3);//3 For Hotel
         for(int i=0;i<Hots.size();++i){
             ReadAndWrite.writeHotelIntoFile(Hots.get(i));
@@ -238,7 +238,7 @@ public class Admin {
             }
         }
         Hots.remove(t);//Removing Customer From Vector
-        ReadAndWrite.truncAFile("./src/dataLayer/hotels.csv");
+        ReadAndWrite.truncAFile("./data/hotels.csv");
         ReadAndWrite.writeHeadersInFile(3);//3 For Hotel
         for(int i=0;i<Hots.size();++i){
             ReadAndWrite.writeHotelIntoFile(Hots.get(i));
@@ -274,7 +274,7 @@ public class Admin {
                 i=Reps.size();
             }
         }
-        ReadAndWrite.truncAFile("./src/dataLayer/receptionists.csv");
+        ReadAndWrite.truncAFile("./data/receptionists.csv");
         ReadAndWrite.writeHeadersInFile(2);//2 For Receptionist
         for(int i=0;i<Reps.size();++i){
             ReadAndWrite.writeReceptionistIntoFile(Reps.get(i));
@@ -294,7 +294,7 @@ public class Admin {
             }
         }
         Reps.remove(t);//Removing Customer From Vector
-        ReadAndWrite.truncAFile("./src/dataLayer/receptionists.csv");
+        ReadAndWrite.truncAFile("./data/receptionists.csv");
         ReadAndWrite.writeHeadersInFile(2);//2 For Receptionist
         for(int i=0;i<Reps.size();++i){
             ReadAndWrite.writeReceptionistIntoFile(Reps.get(i));

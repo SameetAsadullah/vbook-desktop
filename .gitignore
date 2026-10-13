@@ -13,7 +13,8 @@ requirements/
 *.rar
 
 # Runtime CSV data created by the application
-source-code/src/dataLayer/*.csv
+data/*.csv
+!data/.gitkeep
 
 # OS files
 .DS_Store

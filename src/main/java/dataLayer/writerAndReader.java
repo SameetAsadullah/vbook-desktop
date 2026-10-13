@@ -13,17 +13,17 @@ public class writerAndReader {
         try {
             FileWriter fileWriter = null;
             if (fileCheck == 0) {           //0 indicates file of customers to be opened
-                fileWriter = new FileWriter("./src/dataLayer/customers.csv", true);
+                fileWriter = new FileWriter("./data/customers.csv", true);
             } else if (fileCheck == 1) {    //1 indicates file of vendors to be opened
-                fileWriter = new FileWriter("./src/dataLayer/vendors.csv", true);
+                fileWriter = new FileWriter("./data/vendors.csv", true);
             } else if (fileCheck == 2) {    //2 indicates file of receptionists to be opened
-                fileWriter = new FileWriter("./src/dataLayer/receptionists.csv", true);
+                fileWriter = new FileWriter("./data/receptionists.csv", true);
             } else if (fileCheck == 3){     //3 indicates file of hotels to be opened
-                fileWriter = new FileWriter("./src/dataLayer/hotels.csv", true);
+                fileWriter = new FileWriter("./data/hotels.csv", true);
             } else if (fileCheck == 4) {    //4 indicates file of admins to be opened
-                fileWriter = new FileWriter("./src/dataLayer/admins.csv", true);
+                fileWriter = new FileWriter("./data/admins.csv", true);
             } else if (fileCheck == 5){     //5 indicates file of rooms to be opened
-                fileWriter = new FileWriter("./src/dataLayer/rooms.csv", true);
+                fileWriter = new FileWriter("./data/rooms.csv", true);
             }
             BufferedWriter bufferedWriter= new BufferedWriter(fileWriter);
             if (fileCheck == 0 || fileCheck == 1 || fileCheck == 2 || fileCheck == 4) {
@@ -42,7 +42,7 @@ public class writerAndReader {
     //function for writing data into customer file
     public void writeCustomerIntoFile(Customer c) {
         try {
-            FileWriter fileWriter = new FileWriter("./src/dataLayer/customers.csv", true);
+            FileWriter fileWriter = new FileWriter("./data/customers.csv", true);
             BufferedWriter bufferedWriter= new BufferedWriter(fileWriter);
             bufferedWriter.append(c.getID() + "," + c.getName() + "," + c.getEmail() + "," + c.getPassword() + ",");
             bufferedWriter.append(c.getPhoneNo() + "," + c.getCNIC() + "," + c.getAccountNo() + "," + c.getAddress() + "\n");
@@ -60,7 +60,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/customers.csv");
+            FileInputStream fileStream = new FileInputStream("./data/customers.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {
@@ -112,7 +112,7 @@ public class writerAndReader {
     //function for writing data into admin file
     public void writeAdminIntoFile(Admin c) {
         try {
-            FileWriter fileWriter = new FileWriter("./src/dataLayer/admins.csv", true);
+            FileWriter fileWriter = new FileWriter("./data/admins.csv", true);
             BufferedWriter bufferedWriter= new BufferedWriter(fileWriter);
             bufferedWriter.append(c.getID() + "," + c.getName() + "," + c.getEmail() + "," + c.getPassword() + ",");
             bufferedWriter.append(c.getPhoneNo() + "," + c.getCNIC() + "," + c.getAccountNo() + "," + c.getAddress() + "\n");
@@ -130,7 +130,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/admins.csv");
+            FileInputStream fileStream = new FileInputStream("./data/admins.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {
@@ -182,7 +182,7 @@ public class writerAndReader {
     //function for writing data into vendor file
     public void writeVendorIntoFile(Vendor v) {
         try {
-            FileWriter fileWriter = new FileWriter("./src/dataLayer/vendors.csv", true);
+            FileWriter fileWriter = new FileWriter("./data/vendors.csv", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.append(v.getID() + "," + v.getName() + "," + v.getEmail() + "," + v.getPassword() + ",");
             bufferedWriter.append(v.getPhoneNo() + "," + v.getCNIC() + "," + v.getAccountNo() + "," + v.getAddress() + "\n");
@@ -200,7 +200,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/vendors.csv");
+            FileInputStream fileStream = new FileInputStream("./data/vendors.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {
@@ -252,7 +252,7 @@ public class writerAndReader {
     //function for writing data into receptionist file
     public void writeReceptionistIntoFile(Receptionist r) {
         try {
-            FileWriter fileWriter = new FileWriter("./src/dataLayer/receptionists.csv", true);
+            FileWriter fileWriter = new FileWriter("./data/receptionists.csv", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
             bufferedWriter.append(r.getID() + "," + r.getName() + "," + r.getEmail() + "," + r.getPassword() + ",");
             bufferedWriter.append(r.getPhoneNo() + "," + r.getCNIC() + "," + r.getAccountNo() + "," + r.getAddress() + "\n");
@@ -270,7 +270,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/receptionists.csv");
+            FileInputStream fileStream = new FileInputStream("./data/receptionists.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {
@@ -322,7 +322,7 @@ public class writerAndReader {
     //function for writing data into hotel file
     public void writeHotelIntoFile(Hotel h) {
         try {
-            FileWriter fileStream = new FileWriter("./src/dataLayer/hotels.csv", true);
+            FileWriter fileStream = new FileWriter("./data/hotels.csv", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileStream);
             bufferedWriter.append(h.getID() + "," + h.getName() + "," + h.getAddress() + "," + h.getLocation() + "," + h.getSingleRooms() + ",");
             bufferedWriter.append(h.getDoubleRooms() + "," + h.getSingleRoomPrice() + "," + h.getDoubleRoomPrice() + "\n");
@@ -340,7 +340,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/hotels.csv");
+            FileInputStream fileStream = new FileInputStream("./data/hotels.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {
@@ -399,7 +399,7 @@ public class writerAndReader {
     //function for writing data into rooms file
     public void writeRoomsIntoFile(Hotel h) {
         try {
-            FileWriter fileStream = new FileWriter("./src/dataLayer/rooms.csv", true);
+            FileWriter fileStream = new FileWriter("./data/rooms.csv", true);
             BufferedWriter bufferedWriter = new BufferedWriter(fileStream);
             for (int i = 0; i < h.getRooms().size(); ++i) {
                 bufferedWriter.append(h.getID() + "," + h.getRooms().get(i).getNumber() + "," + h.getRooms().get(i).getType() + ",");
@@ -420,7 +420,7 @@ public class writerAndReader {
         boolean check = false;
 
         try {
-            FileInputStream fileStream = new FileInputStream("./src/dataLayer/rooms.csv");
+            FileInputStream fileStream = new FileInputStream("./data/rooms.csv");
             DataInputStream dataStream = new DataInputStream(fileStream);
             BufferedReader bufferReader = new BufferedReader(new InputStreamReader(dataStream));
             while ((value = bufferReader.read()) != -1) {

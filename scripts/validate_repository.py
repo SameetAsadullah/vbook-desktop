@@ -11,9 +11,9 @@ ROOT = Path(__file__).resolve().parents[1]
 REQUIRED = [
     ROOT / "README.md",
     ROOT / "LICENSE",
-    ROOT / "source-code/src/presentationLayer/Main.java",
+    ROOT / "src/main/java/presentationLayer/Main.java",
 ]
-FORBIDDEN_PARTS = ("source-code/out/", "source-code/.idea/", "requirements/")
+FORBIDDEN_PARTS = ("out/", ".idea/", "requirements/")
 FORBIDDEN_SUFFIXES = (".class", ".iml", ".rar")
 
 
@@ -46,12 +46,12 @@ def main() -> None:
     if forbidden:
         raise SystemExit("Generated files are tracked:\n" + "\n".join(forbidden))
 
-    fxml_files = sorted(ROOT.glob("source-code/src/**/*.fxml"))
+    fxml_files = sorted(ROOT.glob("src/main/resources/**/*.fxml"))
     for path in fxml_files:
         ET.parse(path)
 
     validate_readme_links()
-    java_count = len(list(ROOT.glob("source-code/src/**/*.java")))
+    java_count = len(list(ROOT.glob("src/main/java/**/*.java")))
     print(f"Validated {java_count} Java files and {len(fxml_files)} FXML views.")
 
 

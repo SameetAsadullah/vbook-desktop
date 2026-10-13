@@ -26,10 +26,9 @@ The application follows a three-layer architecture:
 See [Architecture](docs/ARCHITECTURE.md) for a more detailed map of the codebase.
 
 ```text
-source-code/src/
-├── dataLayer/           CSV persistence
-├── logicLayer/          Domain and application logic
-└── presentationLayer/   JavaFX controllers, FXML, CSS, and assets
+src/main/java/           JavaFX controllers and application logic
+src/main/resources/      FXML views, styles, and image assets
+data/                    Local runtime CSV storage
 ```
 
 ## Run locally
@@ -42,10 +41,10 @@ source-code/src/
 
 ### IntelliJ IDEA setup
 
-1. Open the `source-code` directory as a project.
+1. Open the repository root as a project and mark `src/main/java` as a source root and `src/main/resources` as a resources root.
 2. Add the JavaFX SDK `lib` directory under **Project Structure → Libraries**.
 3. Create a run configuration for `presentationLayer.Main`.
-4. Set the working directory to the repository's `source-code` directory. The original persistence layer uses paths relative to that directory.
+4. Set the working directory to the repository root.
 5. Add these VM options, replacing the placeholder with your JavaFX SDK path:
 
    ```text
@@ -54,7 +53,7 @@ source-code/src/
 
 6. Run `presentationLayer.Main`.
 
-CSV files are created in `source-code/src/dataLayer` as the application is used. They are intentionally ignored because they may contain local account and booking data.
+CSV files are created in `data` as the application is used. They are intentionally ignored because they may contain local account and booking data.
 
 ## Screenshots
 

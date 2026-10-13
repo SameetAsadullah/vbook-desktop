@@ -23,7 +23,7 @@ jobs:
       - name: Compile the core layers
         run: |
           mkdir -p /tmp/vbook-classes
-          javac -d /tmp/vbook-classes source-code/src/logicLayer/*.java source-code/src/dataLayer/*.java
+          javac -d /tmp/vbook-classes src/main/java/logicLayer/*.java src/main/java/dataLayer/*.java
 
       - name: Validate repository structure
         run: python3 scripts/validate_repository.py

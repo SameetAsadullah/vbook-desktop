@@ -25,7 +25,7 @@ public class HRS {
 
         //initializing customers from file
         try {
-            File myObj = new File("./src/dataLayer/customers.csv");
+            File myObj = new File("./data/customers.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 readAndWrite.readCustomersFromFile(customers);
             } else {
@@ -37,7 +37,7 @@ public class HRS {
 
         //initializing vendors from file
         try {
-            File myObj = new File("./src/dataLayer/vendors.csv");
+            File myObj = new File("./data/vendors.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 readAndWrite.readVendorsFromFile(vendors);
             } else {
@@ -49,7 +49,7 @@ public class HRS {
 
         //initializing receptionists from file
         try {
-            File myObj = new File("./src/dataLayer/receptionists.csv");
+            File myObj = new File("./data/receptionists.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 readAndWrite.readReceptionistFromFile(receptionists);
             } else {
@@ -61,7 +61,7 @@ public class HRS {
 
         //initializing hotels from file
         try {
-            File myObj = new File("./src/dataLayer/hotels.csv");
+            File myObj = new File("./data/hotels.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 readAndWrite.readHotelsFromFile(hotels);
             } else {
@@ -73,7 +73,7 @@ public class HRS {
 
         //initializing admins from file
         try {
-            File myObj = new File("./src/dataLayer/admins.csv");
+            File myObj = new File("./data/admins.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 readAndWrite.readAdminsFromFile(admins);
             } else {
@@ -85,7 +85,7 @@ public class HRS {
 
         //initializing rooms from file
         try {
-            File myObj = new File("./src/dataLayer/rooms.csv");
+            File myObj = new File("./data/rooms.csv");
             if (!myObj.createNewFile()) {   //if file has already created
                 for (int i = 0; i < hotels.size(); ++i) {
                     readAndWrite.readRoomsFromFile(hotels.get(i));
@@ -352,7 +352,7 @@ public class HRS {
         for (int i = 0; i < customers.size(); ++i) {
             if (customers.get(i).getEmail().equals(email)) {
                 h.reserveRoom(checkInDate, checkOutDate, customers.get(i), hotels);
-                readAndWrite.truncAFile("./src/dataLayer/rooms.csv");
+                readAndWrite.truncAFile("./data/rooms.csv");
                 readAndWrite.writeHeadersInFile(5);
                 for (int j = 0; j < hotels.size(); ++j) {
                     readAndWrite.writeRoomsIntoFile(hotels.get(j));
