@@ -1,6 +1,6 @@
 # VBook Hotel Reservation System
 
-VBook is a desktop hotel reservation application built with Java and JavaFX. It models the workflows of a multi-role booking system while keeping the original academic project architecture and CSV-based persistence intact.
+VBook is a desktop hotel reservation application built with Java and JavaFX. It models the workflows of a multi-role booking system while keeping the original three-layer architecture and CSV-based persistence intact.
 
 ![Java](https://img.shields.io/badge/Java-15%2B-ED8B00?logo=openjdk&logoColor=white)
 ![JavaFX](https://img.shields.io/badge/UI-JavaFX-007396)
@@ -72,7 +72,7 @@ CSV files are created in `source-code/src/dataLayer` as the application is used.
 
 ## Project status
 
-This repository preserves an academic team project and its original learning-focused implementation. CSV storage and plaintext credentials make it suitable for demonstration and study, not production use. A production version would use a database, password hashing, validation, automated tests, and a packaged build.
+This repository preserves the original team implementation. CSV storage and plaintext credentials make it suitable for local execution and architecture review, not production deployment. A production version would use a database, password hashing, validation, automated tests, and a packaged build.
 
 ## Contributors
 
