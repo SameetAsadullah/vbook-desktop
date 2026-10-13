@@ -1,0 +1,32 @@
+name: Quality checks
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+
+      - name: Compile the core layers
+        run: |
+          mkdir -p /tmp/vbook-classes
+          javac -d /tmp/vbook-classes source-code/src/logicLayer/*.java source-code/src/dataLayer/*.java
+
+      - name: Validate repository structure
+        run: python3 scripts/validate_repository.py
+
+      - name: Check whitespace
+        run: git diff --check
